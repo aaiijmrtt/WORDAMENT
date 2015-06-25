@@ -67,14 +67,24 @@ int mtch(char *wrd,char *chck) {
 //and print all matches to stdout.
 void fnd(char chr) {
 	char *strng=(char*)malloc(50*sizeof(char));
-	char *flnm=(char*)malloc(6*sizeof(char));
+	char *flnm=(char*)malloc(16*sizeof(char));
 	char *chck=(char*)malloc(17*sizeof(char));
-	flnm[0]=chr;
-	flnm[1]='.';
-	flnm[2]='t';
-	flnm[3]='x';
-	flnm[4]='t';
-	flnm[5]='\0';
+	flnm[0]='r';
+	flnm[1]='e';
+	flnm[2]='s';
+	flnm[3]='o';
+	flnm[4]='u';
+	flnm[5]='r';
+	flnm[6]='c';
+	flnm[7]='e';
+	flnm[8]='s';
+	flnm[9]='/';
+	flnm[10]=chr;
+	flnm[11]='.';
+	flnm[12]='t';
+	flnm[13]='x';
+	flnm[14]='t';
+	flnm[15]='\0';
 	//opening the dictionary containing all words beginning with the letter
 	FILE *flptr=fopen(flnm,"r");
 	int i;
@@ -100,7 +110,7 @@ void fnd(char chr) {
 	free(chck);
 }
 int main(int argc,char *argv[])	{
-	if((argc!=2)||(strlen(argv[1])!=16))	{
+	if((argc!=2)||(strlen(argv[1])!=16)) {
 		printf("[USAGE] %s [CHAR[16] IN CAPS]\n",argv[0]);
 		exit(-1);
 	}
